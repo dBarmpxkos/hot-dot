@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hot-Dot Project Wiki</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #333;
+
+            $ h1 {
+                border-bottom: 2px solid #333;
+            }
+
+            .spec-table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .spec-table td,
+            .spec-table th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            code {
+                background: #eee;
+                padding: 2px 4px;
+            }
+    </style>
+</head>
+
+<body>
+    <h1>Hot-Dot: Thermal 8-Dot Braille Interface</h1>
+    <p>Project by Dr. Dimitris Barmpakos [cite: 2]</p>
+
+    <h2>Principle of Operation</h2>
+    <p>A finger-worn peripheral using 0201 SMT thermistors in self-heating mode to provide tactile feedback.</p>
+
+    <h2>Technical Specifications</h2>
+    <table class="spec-table">
+        <tr>
+            <th>Component</th>
+            <th>Specification</th>
+        </tr>
+        <tr>
+            <td>Actuators</td>
+            <td>2x4 Array 0201 Thermistors</td>
+        </tr>
+        <tr>
+            <td>Pitch</td>
+            <td>2.5mm Standard Braille</td>
+        </tr>
+        <tr>
+            <td>Link</td>
+            <td>USB CDC (Serial) + Optical Anchor</td>
+        </tr>
+    </table>
+
+    <h2>Installation</h2>
+    <code>git clone https://github.com/dBarmpxkos/hot-dot.git</code>
+</body>
+
+</html>
