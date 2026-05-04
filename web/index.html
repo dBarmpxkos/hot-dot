@@ -7,95 +7,103 @@
         body {
             font-family: sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
             color: #333;
+        }
 
-            $ h1 {
-                border-bottom: 2px solid #333;
-            }
+        h1 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
 
-            .spec-table {
-                width: 100%;
-                border-collapse: collapse;
-            }
+        .hero {
+            width: 100%;
+            margin: 25px 0 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
 
-            .spec-table td,
-            .spec-table th {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-            code {
-                background: #eee;
-                padding: 2px 4px;
-            }
+        .spec-table td,
+        .spec-table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 4px;
+        }
     </style>
 </head>
 
 <body>
     <h1>Hot-Dot: An open thermal haptic interface for smartphones</h1>
 
-    <h2>Principle of Operation</h2>
-    <p>Hot-dot is a thermal haptic interface that converts content from a smartphone screen to thermal feedback. It
-        leverages the actual smartphone CPU to do most of the heavy lifting, i.e. it analyses the content under a user's
-        finger and converts the region of interest to appropriate thermal signals which are fed to an MCU to actually
-        drive the microheaters. The system is wearable, low-footprint, low-cost (targeting a cost of under 40 eur.) and
-        open-source. It is composed by:
+    <img class="hero" src="hot-dot-hero.png" alt="Hot-Dot thermal haptic finger ring connected to a smartphone">
+    <p>
+        AI-generated semi-slop image to show the concept - it's going to be close to this - I promise 😂!
     </p>
+    <h2>Principle of Operation</h2>
+    <p>
+        Hot-dot is a thermal haptic interface that converts content from a smartphone screen to thermal feedback.
+        It uses the smartphone CPU to analyse the content under a user's finger and converts the region of interest
+        to thermal signals, which are sent to an MCU that drives the microheaters.
+    </p>
+
     <ul>
-        <li><strong>Wearable finger-band:</strong> A Kapton-based device which consists of an array of 0201 SMT
-            thermistors arranged in a 2x4 grid working as heaters, (possibly) three ultra-fast photodiodes, an RP2040,
-            peripheral electronics and a USB-C connector.</li>
-        <li><strong>Android script:</strong> The main tasks of the Android script are: (a) to read the screen content
-            around an area that a user touches, (b) to determine the appropriate thermal "translation" (either Brille or
-            a custom hybrid mode for texture feeling) and (c) to communicate information with the finger-band.
-        </li>
+        <li><strong>Wearable finger-band:</strong> A Kapton-based ring with an array of SMT thermistors working as
+            heaters, optional photodiodes, RP2040, peripheral electronics and USB-C.</li>
+        <li><strong>Android script:</strong> Reads screen content around the touched area, translates it to Braille or
+            hybrid texture modes, and communicates with the finger-band.</li>
+    </ul>
 
-        <h2>Technical Specifications</h2>
-        <table class="spec-table">
-            <tr>
-                <td colspan="2"><strong>Hardware</strong></td>
-            </tr>
-            <tr>
-                <td>Actuators</td>
-                <td>2x4 Array 0201 Thermistors as microheaters (i.e. B59421A0115A062)</td>
-            </tr>
-            <tr>
-                <td>FETs</td>
-                <td>Typical small-footprint n-type MOSFET, driving the thermistors with VUSB coming from the Android
-                    phone</td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong>Firmware</strong></td>
-            </tr>
-            <tr>
-                <td>MCU</td>
-                <td>RP2040</td>
-            </tr>
-            <tr>
-                <td>Protocol</td>
-                <td>USB CDC (Serial/UART)</td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong>Software</strong></td>
-            </tr>
-            <tr>
-                <td>Android</td>
-                <td>Native or a simple framework</td>
-            </tr>
-            <tr>
-                <td>MCU</td>
-                <td>Raspberry Pi Pico SDK</td>
-            </tr>
-            <tr>
-                <td>PCB Design</td>
-                <td>KiCad</td>
-            </tr>
-        </table>
-
-
+    <h2>Technical Specifications</h2>
+    <table class="spec-table">
+        <tr>
+            <td colspan="2"><strong>Hardware</strong></td>
+        </tr>
+        <tr>
+            <td>Actuators</td>
+            <td>2x4 Array SMT thermistors as microheaters</td>
+        </tr>
+        <tr>
+            <td>FETs</td>
+            <td>Small-footprint n-type MOSFETs driven from VUSB</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Firmware</strong></td>
+        </tr>
+        <tr>
+            <td>MCU</td>
+            <td>RP2040</td>
+        </tr>
+        <tr>
+            <td>Protocol</td>
+            <td>USB CDC Serial/UART</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>Software</strong></td>
+        </tr>
+        <tr>
+            <td>Android</td>
+            <td>Native or simple framework</td>
+        </tr>
+        <tr>
+            <td>MCU</td>
+            <td>Raspberry Pi Pico SDK</td>
+        </tr>
+        <tr>
+            <td>PCB Design</td>
+            <td>KiCad</td>
+        </tr>
+    </table>
 </body>
 
 </html>
